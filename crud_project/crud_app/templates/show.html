@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>Profile</title>
+       
+    </head>
+
+<body>
+<table class = "table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Contact</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for profile in profiles %}
+        <tr>
+            <td>{{ profile.first_name}}</td>
+            <td>{{ profile.last_name}}</td>
+            <td>{{ profile.email}}</td>
+            <td>{{ profile.dob}}</td>
+            <td>{{ profile.contact}}</td>
+            <td>
+            <a href="/edit/{{ profile.id }}"><span class="glyphicon glyphicon-pencil">Edit</span></a>
+            <a href="/delete/{{ profile.id }}">Delete</a>    
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+<center><a href="/pro/" class ="btn btn-primary">Add New Record</a></center>
+</body>
+</html>
